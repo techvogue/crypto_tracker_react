@@ -1,5 +1,7 @@
+
 .text-stroke:hover
 {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: .3rem;
+    cursor: pointer;
 }
