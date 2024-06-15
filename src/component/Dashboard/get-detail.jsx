@@ -28,7 +28,7 @@ export default function Coins() {
 
   const selectPageHandler = (selectedPage) => {
     const dataToUse = filteredData.length > 0 ? filteredData : myData;
-    const pageCount = Math.ceil(dataToUse.length / 10);
+    const pageCount = Math.ceil(dataToUse.length / 9);
 
     if (selectedPage >= 1 && selectedPage <= pageCount && selectedPage !== page) {
       setPage(selectedPage);
@@ -109,7 +109,7 @@ export default function Coins() {
       </form>
       <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-5">
         {(filteredData.length > 0 ? filteredData : myData)
-          .slice((page - 1) * 10, page * 10)
+          .slice((page - 1) * 9, page * 9)
           .map((name) => (
             <Link
               to={`/CoinDetail/${name.id}`}
@@ -157,27 +157,27 @@ export default function Coins() {
         <ul className="inline-flex items-center justify-center text-base h-full">
           <li className={`${page === 1 ? "hidden" : ""}`}>
             <span
-              className="flex items-center justify-center px-2 md:px-4 h-14 w-full ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="flex items-center justify-center px-1 md:px-4 h-14 w-full ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               onClick={() => selectPageHandler(page - 1)}
             >
               Previous
             </span>
           </li>
-          {[...Array(Math.ceil((filteredData.length > 0 ? filteredData.length : myData.length) / 10))].map((_, i) => (
+          {[...Array(Math.ceil((filteredData.length > 0 ? filteredData.length : myData.length) / 9))].map((_, i) => (
             <li key={i}>
               <span
                 className={`${
                   page === i + 1
                     ? "bg-gray-300 text-black"
                     : "text-gray-500 bg-gray-300 dark:text-gray-400 dark:bg-gray-800"
-                } flex items-center justify-center px-3 md:px-4 h-14 leading-tight border border-gray-300 hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer dark:border-gray-700`}
+                } flex items-center justify-center px-3 md:px-4 lg:px-6 h-14 leading-tight border border-gray-300 hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer dark:border-gray-700`}
                 onClick={() => selectPageHandler(i + 1)}
               >
                 {i + 1}
               </span>
             </li>
           ))}
-          <li className={`${page === Math.ceil((filteredData.length > 0 ? filteredData.length : myData.length) / 10) ? "hidden" : ""}`}>
+          <li className={`${page === Math.ceil((filteredData.length > 0 ? filteredData.length : myData.length) / 9) ? "hidden" : ""}`}>
             <span
               className="flex items-center justify-center px-2 md:px-4 h-14 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               onClick={() => selectPageHandler(page + 1)}

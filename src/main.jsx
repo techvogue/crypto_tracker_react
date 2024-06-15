@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { Route,RouterProvider, createBrowserRouter,createRoutesFromElements } from 'react-router-dom'
 import Home from './component/Main/Home.jsx'
-import Contact from './component/contact/index.jsx'
+
 import About from './component/about/index.jsx'
 import CoinDetail from './component/coin_detail/coin.jsx'
 
@@ -16,7 +16,6 @@ const router=createBrowserRouter(
           
       <Route path='dashboard' element={<Dashboard/>}/>
       <Route path='about' element={<About/>}/>
-      <Route path='contact' element={<Contact/>}/>
       <Route path='/CoinDetail/:coinId' element={<CoinDetail/>}/>
     </Route>
     
