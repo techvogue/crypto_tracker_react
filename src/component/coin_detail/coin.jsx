@@ -59,15 +59,15 @@ export default function CoinDetail() {
 
   return (
     <div className="bg-zinc-900 ">
-      <div className="bg-zinc-800 rounded-lg w-4/5 md:w-3/5 mx-auto p-5 translate-y-20 mb-32">
+      <div className="bg-zinc-800 rounded-lg w-4/5 md:w-4/5 lg:w-3/5  mx-auto pb-10    translate-y-20 mb-32">
         <div className=" flex justify-center p-4 ">
-          <img className="w-28" src={coinData.image.large} alt="" />
-          <div className="text-4xl text-stone-200 p-2">
+          <img className="w-28 md:w-32" src={coinData.image.large} alt="" />
+          <div className="text-4xl md:text-5xl text-stone-200 p-2">
             <p className="capitalize">{coinData.symbol}</p>
             <p>{coinData.name}</p>
           </div>
         </div>
-        <div className="text-start w-4/5 md:w-3/5 mx-auto text-stone-200 text-2xl">
+        <div className="text-start w-4/5 md:w-3/5 mx-auto text-stone-200 text-2xl md:text-3xl md:translate-x-7">
           <p className=" ">
             Current Price: ${coinData.market_data.current_price.usd}
           </p>
@@ -86,8 +86,9 @@ export default function CoinDetail() {
       
       </div>
       <div className="text-stone-200 w-4/5 mx-auto text-justify">
+          <h3 className="mx-auto md:px-10 m-3 text-3xl text-blue-600 font-bold">Description :-</h3>
           <p
-            className="desc"
+            className="desc mx-auto md:px-10"
             dangerouslySetInnerHTML={{ __html: coinData.description.en }}
           ></p>
         </div>
