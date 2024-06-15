@@ -1,7 +1,7 @@
 import React from "react";
 import Coins from "../Dashboard/get-detail";
 import "./style.css";
-
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="max-w-full bg-[url('/src/assets/crypto-phone.jpg')] md:bg-[url('/src/assets/crypto_web.jpg')] bg-center md:bg-[top] bg-cover min-h-screen flex flex-col items-center md:items-start justify-start">
@@ -21,12 +21,12 @@ export default function Home() {
             Cryptocurrency Tracking at Your Fingertips
           </p>
         </div>
-        <div className="  sm:w-80 ml-10 md:flex justify-start  items-center  mt-6 sm:ml-32 md:mt-10 md:ml-32">
+        <div className="   sm:w-80 ml-10 md:flex justify-start  items-center  mt-6 sm:ml-32 md:mt-10 md:ml-32">
           <div className="relative inline-block text-lg group">
             <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors  sm:w-fit duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
               <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-blue-600 group-hover:-rotate-180 ease"></span>
-              <span className="relative">Explore Me</span>
+              <Link className="cursor-pointer" to="/dashboard"><span className="relative">Explore Me</span></Link>
             </span>
             <span
               className="absolute bottom-0 right-0 w-full h-14 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-black rounded-lg group-hover:mb-0 group-hover:mr-0"
