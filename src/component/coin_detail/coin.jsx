@@ -78,8 +78,8 @@ export default function CoinDetail() {
             )}%</span>
             
           </p>
-          <p>Day high: {coinData.market_data.high_24h.usd}</p>
-          <p>Day low: <span className={`${coinData.market_data.price_change_percentage_24h_in_currency.usd>0?"text-green-500":"text-red-600"}`}> {coinData.market_data.low_24h.usd}</span> </p>
+          <p>Day high: <span className="text-green-600"> ${coinData.market_data.high_24h.usd}</span></p>
+          <p>Day low: <span className="text-red-700"> ${coinData.market_data.low_24h.usd}</span> </p>
           <p> Market Cap : {coinData.market_data.market_cap.usd}</p>
         </div>
 
